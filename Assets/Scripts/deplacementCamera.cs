@@ -9,7 +9,7 @@ public class deplacementCamera : MonoBehaviour
     [SerializeField] private float vitesseRotation; 
     private float VitesseZoom = 0.1f; 
     private float minZoom = 0.6f;
-    private float maxZoom = 10.0f; 
+    private float maxZoom = 5.0f; 
     private float leZoom; 
 
 
@@ -33,20 +33,10 @@ public class deplacementCamera : MonoBehaviour
             leZoom = maxZoom;
         }
 
-        
-        float horizontalInput = Input.GetAxis("Horizontal");
-        if (horizontalInput != 0)
-        {
-            distance = Quaternion.AngleAxis(horizontalInput * vitesseRotation * Time.deltaTime, Vector3.up) * distance;
-        }
 
-        
-        Vector3 nouvellePosition = balle.transform.position + distance.normalized * leZoom;
-        transform.position = nouvellePosition;
-
-        
+        transform.position = balle.transform.position - balle.transform.forward * leZoom + new Vector3(0,0.3f,0);
+       
         transform.LookAt(balle.transform.position);
-        
     }
 }
 

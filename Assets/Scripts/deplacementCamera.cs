@@ -6,7 +6,8 @@ public class deplacementCamera : MonoBehaviour
 {
     [SerializeField] private GameObject balle;
     [SerializeField] private Vector3 distance;
-    [SerializeField] private float vitesseRotation; 
+    [SerializeField] private float vitesseRotation;
+    private Vector3 forwardInitial;
     private float VitesseZoom = 0.1f; 
     private float minZoom = 0.6f;
     private float maxZoom = 5.0f; 

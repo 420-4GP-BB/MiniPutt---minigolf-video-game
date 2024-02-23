@@ -5,7 +5,7 @@ using UnityEngine;
 public class AgrandissementRectangle : MonoBehaviour
 {
     private bool _agrandissementActif;  
-    private Vector3 _vecteurCroissance = new Vector3(0, 0.001f, 0); // Le taux de croissance du vecteur
+    private Vector3 _vecteurCroissance = new Vector3(0, 0.005f, 0); // Le taux de croissance du vecteur
                                                                            // Si on change ces valeurs, on change la vitesse d'acroissement.
                                                                            // Sera fait autrement dans l'exercice 2
 

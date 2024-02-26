@@ -7,15 +7,19 @@ public class DeplacementBalle : MonoBehaviour
     public float vitesseRotation = 100.0f;
     public event Action BalleTiree;
     public event Action BalleArretee;
+    public event Action BalleSortie;
     private Rigidbody rb;
-    private bool balleFrappe = false;
-    //private float tempsDepuisFrappe = 0f; 
+    private bool balleFrappe = false; 
     private bool verificationArretActive = false;
     private Quaternion rotationInitiale;
+    public bool switchDePiste = false;
+    //public Vector3 checkpoint;
+    public string piste;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rotationInitiale = transform.rotation;
+        //checkpoint = transform.position;
     }
 
     void Update()
@@ -27,27 +31,19 @@ public class DeplacementBalle : MonoBehaviour
         {
             BalleTiree?.Invoke();
             balleFrappe = true;
-            //tempsDepuisFrappe = 0f; 
             verificationArretActive = false; 
         }
-
-        /*
-        if (balleFrappe)
-        {
-            tempsDepuisFrappe += Time.deltaTime;
-            if (tempsDepuisFrappe > 1f) 
-            {
-                verificationArretActive = true;
-            }
-        }*/
-
         
         if (balleFrappe && !verificationArretActive && rb.velocity.magnitude < 0.1f)
         {
             verificationArretActive = true;
-            
-            StartCoroutine(attendreAvantDeclencher());
-            
+            StartCoroutine(attendreAvantDeclencher());   
+        }
+
+        if(transform.position.y < -1)
+        {
+            print("Balle sortie");
+            BalleSortie?.Invoke();
         }
     }
 
@@ -66,7 +62,10 @@ public class DeplacementBalle : MonoBehaviour
         transform.rotation = rotationInitiale;
         rb.angularVelocity = Vector3.zero;
         rb.velocity = Vector3.zero;
-
+        //transform.position = checkpoint;
     }
+
+    
+
 
 }

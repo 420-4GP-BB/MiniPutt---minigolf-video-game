@@ -7,11 +7,11 @@ using UnityEngine.UI;
 
 public class AnimationDebut : MonoBehaviour
 {
-    public event Action debutAnimation;
+   /* public event Action debutAnimation;
     public event Action finAnimation;
 
     [SerializeField] TextMeshProUGUI titre; 
-    [SerializeField] float dureeApparition = 2.0f; 
+    [SerializeField] 
 
     private void Start()
     {
@@ -41,5 +41,6 @@ public class AnimationDebut : MonoBehaviour
             finAnimation?.Invoke();
         }
     }
+   */
 }
 

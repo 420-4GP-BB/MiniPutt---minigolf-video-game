@@ -11,9 +11,9 @@ public class DeplacementBalle : MonoBehaviour
     private Rigidbody rb; // le rigidbody de la balle
     private bool balleFrappe = false; // Un booleen qui verifie si la balle a été frappe ou non
     private bool verificationArretActive = false;
-    private Quaternion rotationInitiale; // Un quaternion qui nous indique la rotation initiale de la balle (son forward initial)
+    public Quaternion rotationInitiale; // Un quaternion qui nous indique la rotation initiale de la balle (son forward initial)
     public bool piste3; // un booleen qui nous dit si la balle est dans la piste 3
-    private bool estArreteeSurPente = false; // un booleen qui confirme si la balle s'est arrete sur la pente inclinée de la piste3
+    
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -43,6 +43,7 @@ public class DeplacementBalle : MonoBehaviour
             StartCoroutine(attendreAvantDeclencher());
         }
 
+       
 
         //Si le y de la balle est plus petit que -2, cela veut dire que la balle est sortie des pistes
         // On utilise un y plus grand que -2 pour faire entrer la balle dans le trou
@@ -53,7 +54,7 @@ public class DeplacementBalle : MonoBehaviour
         }
     }
 
-    
+   
 
     // Une coroutine qui attend quelques secondes avant de déclencher que la balle s'est arrêtée. 
     // On utilise cette coroutine pour confirmer que la balle s'est belle et bien arrêtée
@@ -75,10 +76,4 @@ public class DeplacementBalle : MonoBehaviour
         rb.velocity = Vector3.zero;
     }
 
-    private bool EstSurPenteEtArretee()
-    {
-        float hauteurFinPente = -2.3f;
-        float hauteurDebutPente = -1.5f;
-        return transform.position.y >= hauteurDebutPente && transform.position.y <= hauteurFinPente && rb.velocity.magnitude < 0.1f;
-    }
 }

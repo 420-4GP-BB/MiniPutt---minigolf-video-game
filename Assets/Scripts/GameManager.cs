@@ -191,6 +191,7 @@ public class GameManager : MonoBehaviour
         balle.SetActive(true);
         balle.transform.Find("Cube").gameObject.SetActive(true);
         balle.transform.Find("crosshair").gameObject.SetActive(true);
+        balle.transform.rotation = balle.GetComponent<DeplacementBalle>().rotationInitiale;
 
         // on commence a la premiere piste
         versPiste(1);

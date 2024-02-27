@@ -102,8 +102,9 @@ public class GestionAnim : MonoBehaviour
     // Cette méthode prend en parametre le score dans la piste1, piste2 et piste 3
     public void commencerAnimFin(int scorePiste1, int scorePiste2, int scorePiste3)
     {
+        autresAnim[0].gameObject.SetActive(false);
         // On a dit que l'animation de fin contient plusieurs mini animations, on les active toutes
-        foreach(TextMeshProUGUI text in animFin)
+        foreach (TextMeshProUGUI text in animFin)
         {
             text.gameObject.SetActive(true);
             text.color = new Color(text.color.r, text.color.g, text.color.b, 0);

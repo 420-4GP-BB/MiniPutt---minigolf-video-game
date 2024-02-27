@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Mur
   - Piste
+  - Pente
   layers:
   - Default
   - TransparentFX

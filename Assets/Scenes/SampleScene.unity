@@ -389,6 +389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vitesseRotation: 100
+  rotationInitiale: {x: 0, y: 0, z: 0, w: 0}
   piste3: 0
 --- !u!54 &57228071
 Rigidbody:
@@ -2104,7 +2105,7 @@ GameObject:
   - component: {fileID: 879396062}
   m_Layer: 0
   m_Name: Piste3b
-  m_TagString: Untagged
+  m_TagString: Pente
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

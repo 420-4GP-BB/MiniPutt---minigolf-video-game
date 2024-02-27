@@ -53,28 +53,7 @@ public class DeplacementBalle : MonoBehaviour
         }
     }
 
-    /*
-    IEnumerator attendreJusquaSaDescente()
-    {
-        bool balleArreteDef = false;
-        
-
-        while (balleArreteDef == false)
-        {
-            yield return new WaitForSeconds(3.0f);
-            print("ON entre dans la boucle");
-            if (rb.velocity.magnitude < 0.1f && transform.position.y == 0.27)
-            {
-                print("ON entre dans la condition");
-                balleArreteDef = true;
-                verificationArretActive = true;
-                break;
-            }
-
-        }
-        
-    }
-    */
+    
 
     // Une coroutine qui attend quelques secondes avant de déclencher que la balle s'est arrêtée. 
     // On utilise cette coroutine pour confirmer que la balle s'est belle et bien arrêtée
